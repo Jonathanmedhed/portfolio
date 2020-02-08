@@ -102,13 +102,19 @@ function Navbar({
                 {type === 'home' && (
                   <Fragment>
                     <li onClick={() => toSkills()} className='show-sm'>
-                      <button className='btn btn-primary'>Skills</button>
+                      <button className='btn btn-primary'>
+                        <Link>Skills</Link>
+                      </button>
                     </li>
                     <li onClick={() => toContact()} className='show-sm'>
-                      <button className='btn btn-primary'>Contact</button>
+                      <button className='btn btn-primary'>
+                        <Link>Contact</Link>
+                      </button>
                     </li>
                     <li onClick={() => toProjects()} className='show-sm'>
-                      <button className='btn btn-primary'>Projects</button>
+                      <button className='btn btn-primary'>
+                        <Link>Projects</Link>
+                      </button>
                     </li>
                   </Fragment>
                 )}
@@ -140,10 +146,7 @@ function Navbar({
                 </button>
               </li>
               <li className='hide-sm'>
-                <button
-                  onClick={() => toContact()}
-                  className='btn btn-primary'
-                >
+                <button onClick={() => toContact()} className='btn btn-primary'>
                   Contact
                 </button>
               </li>
