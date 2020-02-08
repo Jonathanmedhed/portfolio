@@ -90,7 +90,7 @@ const carFeatResponsive = new Feature(
 export const CarShop = new Project(
   'CarShop',
   'Vehicle Sale Website',
-  'http://carshopjonathan.xyz',
+  'http://167.99.95.246',
   'screen-carshop',
   'screen-carshop-sm',
   carTech,
