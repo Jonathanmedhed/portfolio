@@ -243,6 +243,20 @@ img {
   width: 100%
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  width: 100%;
+  border-top: solid 1px #011627;
+}
+
+.footer i {
+  color: #E5E4E2;
+  margin-left: 1rem;
+}
+
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -520,7 +534,6 @@ img {
 
 .cards .card-small .card-list-small li {
   font-size: 1.1rem;
-  
 }
 
 .cards .card {
@@ -862,6 +875,21 @@ img {
 /* Mobile Styles */
 
 @media (max-width: 700px) {
+  .btn {
+    display: inline-block;
+    background-color: #f4f4f4;
+    color: #333;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    padding: 0.4rem 1.3rem;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    outline: none;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in
+  }
   .cards.two-items {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -886,11 +914,6 @@ img {
     padding-bottom: 0.5rem;
     padding-left: 0rem;
     align-content: space-between;
-  }
-  .navbar ul {}
-  .navbar ul .btn {
-    width: 6.5rem;
-    border: solid 2px #fff;
   }
   .navbar p {
     color: #fff;
@@ -919,13 +942,15 @@ img {
   .container h1 {
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
-    font-size: 1.3rem;
+    font-size: 1.4 rem;
   }
   .cards {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
+    justify-content: center;
+    position: relative;
   }
   .card-top {
     display: flex;
@@ -934,7 +959,7 @@ img {
     align-items: center;
   }
   .card-top p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   .card-top i {
     margin-left: 0.5rem;
@@ -1011,6 +1036,7 @@ img {
   }
   .cards .card-small {
     width: 18rem;
+    margin: 0 auto;
     margin-bottom: 1rem;
   }
   .card-list-single {
@@ -1027,7 +1053,6 @@ img {
     flex-wrap: wrap;
     width: 100%;
     height: 3rem;
-    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     color: #011627;
   }
@@ -1274,15 +1299,35 @@ img {
     background: none;
   }
   .dropdown li {
-    width: 6.5rem;
+    width: 10rem;
     margin-bottom: 0;
     padding-bottom: 0.2rem;
   }
-  .dropdown .btn {
-    width: 100%;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
+
+  .dropdown a {
+    width: 10rem;
+    margin-bottom: 0;
+    padding-bottom: 0.2rem;
   }
+
+  .dropdown .btn {
+    display: inline-block;
+    background-color: #011627;
+    color: #333;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    border-radius: 2em;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    width: 10rem;
+    text-align: center;
+  }
+
+  .dropdown-header {
+    font-size: 1.3rem;
+    border-bottom: 0.1rem solid white;
+  }
+
   .fixed {
     position: fixed;
     right: 0;

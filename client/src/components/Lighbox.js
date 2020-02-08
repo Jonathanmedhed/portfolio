@@ -1,5 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import React from 'react';
 
 function Lightbox({ name, toggle, show }) {
   return (
@@ -71,7 +70,6 @@ function Lightbox({ name, toggle, show }) {
         {name === 'screen-listool-mobile-separate' && (
           <img src={require('../img/listtool-separate.gif')} />
         )}
-        /** Vertical */
         {name === 'screen-carshop-admin-sm' && (
           <img
             className='img-mobile-vertical'
@@ -128,12 +126,6 @@ function Lightbox({ name, toggle, show }) {
         )}
       </div>
       <div className='lightbox-img'>
-        <div className='times hide-sm'>
-          <i onClick={() => toggle(!show)} className='fas fa-times'></i>
-        </div>
-        <div className='times-y hide-sm'>
-          <i onClick={() => toggle(!show)} className='fas fa-times'></i>
-        </div>
         {name === 'screen-easy-mobile' && (
           <img className='img-mobile' src={require('../img/easy-mobile.gif')} />
         )}

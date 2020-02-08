@@ -6,10 +6,11 @@ import { DevObj } from '../resources/Data';
 const Landing = () => {
   let skillsRef = createRef();
   let projectsRef = createRef();
+  let contactRef = createRef();
 
   return (
     <Fragment>
-      <Navbar type={'home'} skillsRef={skillsRef} projectsRef={projectsRef} />
+      <Navbar type={'home'} skillsRef={skillsRef} projectsRef={projectsRef} contactRef={contactRef}/>
       <section className='header'>
         <div className='dark-overlay'>
           <div className='header-inner'>
@@ -178,7 +179,7 @@ const Landing = () => {
             <div className='card bg-white'>
               <div className='card-header bg-primary'>
                 <p className='lead'>
-                  <i className='fas fa-clipboard-list'></i> {project.name}
+                  {project.name}
                 </p>
               </div>
               <div className='hide-sm'>
@@ -301,6 +302,7 @@ const Landing = () => {
           ))}
         </div>
       </section>
+      <div ref={contactRef}></div>
     </Fragment>
   );
 };

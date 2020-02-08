@@ -129,7 +129,7 @@ const listFeatCustom = new Feature(
 );
 
 export const ListTool = new Project(
-  'ListTool App',
+  'ListTool',
   'List Modifier Tool',
   'https://drive.google.com/file/d/1gUd5igq7RZ3KPKg4J0JkN7v2dSrPLTBV/view?usp=sharing',
   'screen',

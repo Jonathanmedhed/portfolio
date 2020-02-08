@@ -2,7 +2,14 @@ import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DevObj } from '../resources/Data';
 
-function Navbar({ type, skillsRef, projectsRef, setProject, setChannel }) {
+function Navbar({
+  type,
+  skillsRef,
+  projectsRef,
+  setProject,
+  setChannel,
+  contactRef
+}) {
   const [showProjects, setShowProjects] = useState(false);
 
   const toSkills = () => {
@@ -12,6 +19,11 @@ function Navbar({ type, skillsRef, projectsRef, setProject, setChannel }) {
 
   const toProjects = () => {
     window.scrollTo(0, projectsRef.current.offsetTop);
+    setShowProjects(!showProjects);
+  };
+
+  const toContact = () => {
+    window.scrollTo(0, contactRef.current.offsetTop);
     setShowProjects(!showProjects);
   };
 
@@ -64,7 +76,15 @@ function Navbar({ type, skillsRef, projectsRef, setProject, setChannel }) {
                         <Link to={`/`}>Home</Link>
                       </button>
                     </li>
-                    <li>Projects: </li>
+                    <li>
+                      <button
+                        onClick={() => toContact()}
+                        className='btn btn-primary'
+                      >
+                        <Link>Contact</Link>
+                      </button>
+                    </li>
+                    <li className='dropdown-header'>Projects: </li>
                     {DevObj.projects.map(project => (
                       <li>
                         <button
@@ -83,6 +103,9 @@ function Navbar({ type, skillsRef, projectsRef, setProject, setChannel }) {
                   <Fragment>
                     <li onClick={() => toSkills()} className='show-sm'>
                       <button className='btn btn-primary'>Skills</button>
+                    </li>
+                    <li onClick={() => toContact()} className='show-sm'>
+                      <button className='btn btn-primary'>Contact</button>
                     </li>
                     <li onClick={() => toProjects()} className='show-sm'>
                       <button className='btn btn-primary'>Projects</button>
@@ -104,6 +127,9 @@ function Navbar({ type, skillsRef, projectsRef, setProject, setChannel }) {
               <li onClick={() => toProjects()} className='hide-sm'>
                 <button className='btn btn-primary'>Projects</button>
               </li>
+              <li onClick={() => toContact()} className='hide-sm'>
+                <button className='btn btn-primary'>Contact</button>
+              </li>
             </Fragment>
           )}
           {type === 'project' && (
@@ -111,6 +137,14 @@ function Navbar({ type, skillsRef, projectsRef, setProject, setChannel }) {
               <li className='hide-sm'>
                 <button className='btn btn-primary'>
                   <Link to='/'>Home</Link>
+                </button>
+              </li>
+              <li className='hide-sm'>
+                <button
+                  onClick={() => toContact()}
+                  className='btn btn-primary'
+                >
+                  Contact
                 </button>
               </li>
               {!showProjects ? (

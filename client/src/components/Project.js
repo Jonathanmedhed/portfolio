@@ -11,6 +11,7 @@ function Project({ match }) {
   const [img, setImg] = useState(null);
 
   let screenRef = createRef();
+  let contactRef = createRef();
 
   useEffect(() => {
     const setData = async () => {
@@ -18,6 +19,7 @@ function Project({ match }) {
         DevObj.projects.forEach(project => {
           if (project.name === match.params.name) {
             setProject(project);
+            window.scrollTo(0, screenRef.current.offsetTop);
           }
         });
       }
@@ -43,6 +45,7 @@ function Project({ match }) {
         type={'project'}
         setProject={setProject}
         setChannel={setChannel}
+        contactRef={contactRef}
       />
       <div ref={screenRef}>
         {project && (
@@ -306,6 +309,7 @@ function Project({ match }) {
           </div>
         )}
       </section>
+      <div ref={contactRef}></div>
     </div>
   );
 }
