@@ -305,7 +305,7 @@ function Project({ match }) {
         <h1 className='py-1 bg-primary'>Link</h1>
         {project && (
           <div className='link'>
-            Visit at: <a href={project.link}>here</a>
+            Visit: <a href={project.link}>here</a>
           </div>
         )}
       </section>

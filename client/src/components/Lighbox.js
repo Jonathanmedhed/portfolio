@@ -70,6 +70,29 @@ function Lightbox({ name, toggle, show }) {
         {name === 'screen-listool-mobile-separate' && (
           <img src={require('../img/listtool-separate.gif')} />
         )}
+        {name === 'screen-mobile-sm' && (
+          <img
+            className='img-mobile-vertical-thin'
+            src={require('../img/listool.gif')}
+          />
+        )}
+        {name === 'screen-listool-mobile-separate-sm' && (
+          <img
+            className='img-mobile-vertical-thin'
+            src={require('../img/listtool-separate.gif')}
+          />
+        )}
+        {name === 'screen-easy-mobile' && (
+          <img className='img-mobile' src={require('../img/easy-mobile.gif')} />
+        )}
+        {name === 'screen-carshop-mobile' && (
+          <img
+            className='img-mobile'
+            src={require('../img/carshop-mobile.gif')}
+          />
+        )}
+      </div>
+      <div className='lightbox-img-vertical'>
         {name === 'screen-carshop-admin-sm' && (
           <img
             className='img-mobile-vertical'
@@ -110,27 +133,6 @@ function Lightbox({ name, toggle, show }) {
           <img
             className='img-mobile-vertical'
             src={require('../img/easy-main.gif')}
-          />
-        )}
-        {name === 'screen-mobile-sm' && (
-          <img
-            className='img-mobile-vertical-thin'
-            src={require('../img/listool.gif')}
-          />
-        )}
-        {name === 'screen-listool-mobile-separate-sm' && (
-          <img
-            className='img-mobile-vertical-thin'
-            src={require('../img/listtool-separate.gif')}
-          />
-        )}
-        {name === 'screen-easy-mobile' && (
-          <img className='img-mobile' src={require('../img/easy-mobile.gif')} />
-        )}
-        {name === 'screen-carshop-mobile' && (
-          <img
-            className='img-mobile'
-            src={require('../img/carshop-mobile.gif')}
           />
         )}
       </div>

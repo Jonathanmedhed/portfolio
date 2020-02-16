@@ -41,7 +41,7 @@ function Navbar({
     <nav className='navbar bg-primary'>
       <h1>
         <Link to='/'>
-          <i class='fas fa-terminal'></i> {DevObj.name}
+          <i class='fas fa-terminal'></i> {DevObj.name.split(" ",1)+"'s Portfolio"}
         </Link>
       </h1>
       <div className='show-sm'>

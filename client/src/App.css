@@ -257,6 +257,10 @@ img {
   margin-left: 1rem;
 }
 
+.footer i:hover {
+  color: #044e8a;
+}
+
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -316,9 +320,7 @@ img {
   margin: 0 0.25rem
 }
 
-.navbar a:hover {
-  font-size: 1.53rem;
-}
+
 
 .dropdown {
   flex-direction: column;
@@ -920,6 +922,9 @@ img {
     margin-left: 0rem;
     font-size: 1.5rem;
   }
+  .navbar h1 {
+    font-size: 1.4rem;
+  }
   .btn:hover {
     color: #828E84;
   }
@@ -960,6 +965,7 @@ img {
   }
   .card-top p {
     font-size: 1.2rem;
+    margin-right: 1rem;
   }
   .card-top i {
     margin-left: 0.5rem;
@@ -1431,6 +1437,19 @@ img {
   transform: translate(-50%, -50%);
   z-index: 1;
   transition: all 2s ease-in;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox .lightbox-img-vertical {
+  position: fixed;
+  left: 36%;
+  top: 57%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: all 2s ease-in;
+  max-width: 90%;
+  max-height: 90%;
 }
 
 .img-mobile {
@@ -1443,7 +1462,6 @@ img {
 }
 
 .img-mobile-vertical {
-  margin-top: 4rem;
   width: 27rem;
   height: 16rem;
   transform: rotate(-90deg);
