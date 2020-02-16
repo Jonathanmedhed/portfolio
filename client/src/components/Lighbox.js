@@ -3,17 +3,17 @@ import React from 'react';
 function Lightbox({ name, toggle, show }) {
   return (
     <div className='lightbox'>
+      <div className='times hide-sm'>
+        <i onClick={() => toggle(!show)} className='fas fa-times'></i>
+      </div>
+      <div
+        className={`${
+          name.includes('mobile') ? 'times-y-mobile show-sm' : 'times-y show-sm'
+        }`}
+      >
+        <i onClick={() => toggle(!show)} className='fas fa-times'></i>
+      </div>
       <div className='lightbox-img'>
-        <div className='times hide-sm'>
-          <i onClick={() => toggle(!show)} className='fas fa-times'></i>
-        </div>
-        <div
-          className={`${
-            name.includes('mobile') ? 'times-y-mobile show-sm' : 'times-y show-sm'
-          }`}
-        >
-          <i onClick={() => toggle(!show)} className='fas fa-times'></i>
-        </div>
         {name === 'showcase' && <img src={require('../img/showcase.jpg')} />}
         {name === 'screen-carshop-admin' && (
           <img src={require('../img/carshop-admin.gif')} />
@@ -124,8 +124,6 @@ function Lightbox({ name, toggle, show }) {
             src={require('../img/listtool-separate.gif')}
           />
         )}
-      </div>
-      <div className='lightbox-img'>
         {name === 'screen-easy-mobile' && (
           <img className='img-mobile' src={require('../img/easy-mobile.gif')} />
         )}

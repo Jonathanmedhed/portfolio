@@ -1352,22 +1352,22 @@ img {
 
 .times {
   position: fixed;
-  top: 0rem;
-  right: 0rem;
+  top: 4rem;
+  right: 3rem;
   z-index: 1;
 }
 
 .times-y {
   position: fixed;
-  top: 0rem;
-  left: 5.5rem;
+  top: 4rem;
+  left: 1rem;
   z-index: 1;
 }
 
 .times-y-mobile {
   position: fixed;
-  top: 2.5rem;
-  right: 1.5rem;
+  top: 4rem;
+  right: 1rem;
   z-index: 1;
 }
 
