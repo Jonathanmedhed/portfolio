@@ -143,7 +143,7 @@ export const ListTool = new Project(
  */
 
 const devTech = new Technology(
-  ['React', 'HTML', 'Css', 'Bootstrap'],
+  ['React', 'HTML', 'Css', 'Bootstrap', 'Sass'],
   ['Node.js', 'Django'],
   ['MongoDB', 'PostgreSQL', 'MySQL'],
   ['JavaScript', 'Java', 'TypeScript', 'Python']

@@ -10,7 +10,12 @@ const Landing = () => {
 
   return (
     <Fragment>
-      <Navbar type={'home'} skillsRef={skillsRef} projectsRef={projectsRef} contactRef={contactRef}/>
+      <Navbar
+        type={'home'}
+        skillsRef={skillsRef}
+        projectsRef={projectsRef}
+        contactRef={contactRef}
+      />
       <section className='header'>
         <div className='dark-overlay'>
           <div className='header-inner'>
@@ -41,7 +46,8 @@ const Landing = () => {
                         className={`fab fa-${(tech === 'React' && 'react') ||
                           (tech === 'HTML' && 'html5') ||
                           (tech === 'Css' && 'css3-alt') ||
-                          (tech === 'Bootstrap' && 'bootstrap')}`}
+                          (tech === 'Bootstrap' && 'bootstrap') ||
+                          (tech === 'Sass' && 'sass')}`}
                       ></i>{' '}
                       {tech}
                     </li>
@@ -178,9 +184,7 @@ const Landing = () => {
           {DevObj.projects.map(project => (
             <div className='card bg-white'>
               <div className='card-header bg-primary'>
-                <p className='lead'>
-                  {project.name}
-                </p>
+                <p className='lead'>{project.name}</p>
               </div>
               <div className='hide-sm'>
                 <h3>{project.description}</h3>
@@ -292,9 +296,7 @@ const Landing = () => {
                 </div>
               </div>
               <div className='card-bottom'>
-                <Link
-                  to={`/projects/${(project.name)}`}
-                >
+                <Link to={`/projects/${project.name}`}>
                   <button className='btn btn-primary'>Demo</button>
                 </Link>
               </div>
