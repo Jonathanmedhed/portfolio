@@ -62,7 +62,8 @@ const Landing = () => {
                         className={`fab fa-${(tech === 'React' && 'react') ||
                           (tech === 'HTML' && 'html5') ||
                           (tech === 'Css' && 'css3-alt') ||
-                          (tech === 'Bootstrap' && 'bootstrap')}`}
+                          (tech === 'Bootstrap' && 'bootstrap') ||
+                          (tech === 'Sass' && 'sass')}`}
                       ></i>{' '}
                       {tech}
                     </li>
