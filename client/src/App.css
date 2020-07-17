@@ -320,8 +320,6 @@ img {
   margin: 0 0.25rem
 }
 
-
-
 .dropdown {
   flex-direction: column;
   align-items: center;
@@ -467,7 +465,7 @@ img {
   align-items: flex-start;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 2rem
 }
 
@@ -545,7 +543,7 @@ img {
   margin-right: 1rem;
   border: solid 2px #011627;
   border-radius: 1rem;
-  width: 10rem;
+  max-width: 20rem;
   height: 16rem;
   position: relative;
   background: linear-gradient(0deg, #f5f5f5 90%, #011627 10%);
@@ -737,131 +735,6 @@ img {
   font-size: 1.2rem
 }
 
-.screen {
-  background: url('./img/listool.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 30rem;
-  height: 17rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-carshop {
-  background: url('./img/carshop1.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 35rem;
-  height: 18rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-easy {
-  background: url('./img/easy.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 35rem;
-  height: 18rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-easy-mobile {
-  background: url('./img/easy-mobile.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  height: 29rem;
-  width: 18rem;
-  position: relative;
-}
-
-.screen-easy-create-order {
-  background: url('./img/easy-create-order.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 29.5rem;
-  height: 18rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-easy-fav {
-  background: url('./img/easy-fav.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 29.6rem;
-  height: 18rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-easy-main {
-  background: url('./img/easy-main.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 35rem;
-  height: 18rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-carshop-layout {
-  background: url('./img/carshoplayout.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 39rem;
-  height: 18rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-carshop-media {
-  background: url('./img/carshop-media.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 39rem;
-  height: 18rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-carshop-admin {
-  background: url('./img/carshop-admin.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 31.5rem;
-  height: 18rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-carshop-mobile {
-  background: url('./img/carshop-mobile.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 20rem;
-  height: 29rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-listool-mobile-separate {
-  background: url('./img/listtool-separate.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 29rem;
-  height: 26rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-listool-mobile-add {
-  background: url('./img/listtool-add.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 29rem;
-  height: 26rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
-.screen-listool-mobile-custom {
-  background: url('./img/listtool-custom.gif') no-repeat center center/cover;
-  background-size: auto 100%;
-  width: 29rem;
-  height: 26rem;
-  border: solid 2px #011627;
-  position: relative;
-}
-
 .hide {
   display: unset;
 }
@@ -876,7 +749,57 @@ img {
 
 /* Mobile Styles */
 
+@media (max-width: 45rem) {
+  .lightbox .lightbox-img {
+    position: fixed;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: all 2s ease-in;
+    margin-top: 1rem;
+    width: 75%;
+  }
+  .lightbox .lightbox-img-mobile {
+    position: fixed;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: all 2s ease-in;
+    height: 17rem;
+    width: 12rem;
+  }
+}
+
+@media (max-width: 22.5rem) {
+  .lightbox .lightbox-img {
+    position: fixed;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: all 2s ease-in;
+    width: 95%;
+  }
+  .lightbox .lightbox-img-mobile {
+    position: fixed;
+    left: 50%;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: all 2s ease-in;
+    width: 95%;
+  }
+}
+
 @media (max-width: 700px) {
+  .screen-showcase-mobile {
+    height: 20rem;
+    width: 12rem;
+    object-fit: cover;
+    position: relative;
+  }
   .btn {
     display: inline-block;
     background-color: #f4f4f4;
@@ -1085,110 +1008,6 @@ img {
   .cards .card .card-list li {
     width: 20rem;
   }
-  .screen-mobile-sm {
-    background: url('./img/listool.gif') no-repeat center center/cover;
-    background-size: auto 100%;
-    width: 20.3rem;
-    height: 12rem;
-    position: relative;
-  }
-  .screen-carshop-sm {
-    background: url('./img/carshop1.gif') no-repeat center center/cover;
-    background-size: auto 100%;
-    width: 21.3rem;
-    height: 12rem;
-    position: relative;
-  }
-  .screen-easy {
-    background: url('./img/easy.gif') no-repeat center center/cover;
-    background-size: auto 99%;
-    width: 21.3rem;
-    height: 13.5rem;
-    position: relative;
-  }
-  .screen-easy-mobile-sm {
-    background: url('./img/easy-mobile.gif') no-repeat center center/cover;
-    background-size: auto 100%;
-    width: 15rem;
-    height: 20rem;
-    position: relative;
-  }
-  .screen-easy-create-order-sm {
-    background: url('./img/easy-create-order.gif') no-repeat center center/cover;
-    background-size: auto 100%;
-    width: 21.3rem;
-    height: 13.5rem;
-    position: relative;
-  }
-  .screen-easy-fav-sm {
-    background: url('./img/easy-fav.gif') no-repeat center center/cover;
-    background-size: auto 100%;
-    width: 21.4rem;
-    height: 13rem;
-    position: relative;
-  }
-  .screen-easy-main-sm {
-    background: url('./img/easy-main.gif') no-repeat center center/cover;
-    background-size: auto 100%;
-    width: 20rem;
-    height: 11rem;
-    position: relative;
-  }
-  .screen-carshop-layout-sm {
-    background: url('./img/carshoplayout.gif') no-repeat center center/cover;
-    background-size: auto 99%;
-    width: 21.3rem;
-    height: 13.5rem;
-    position: relative;
-  }
-  .screen-carshop-media-sm {
-    background: url('./img/carshop-media.gif') no-repeat center center/cover;
-    background-size: auto 99%;
-    width: 21.3rem;
-    height: 13.5rem;
-    position: relative;
-  }
-  .screen-carshop-admin-sm {
-    background: url('./img/carshop-admin.gif') no-repeat center center/cover;
-    background-size: auto 100%;
-    width: 20.4rem;
-    height: 13.5rem;
-    position: relative;
-  }
-  .screen-carshop-mobile {
-    background: url('./img/carshop-mobile.gif') no-repeat center center/cover;
-    background-size: auto 57%;
-    width: 21rem;
-    position: relative;
-  }
-  .screen-carshop-mobile-sm {
-    background: url('./img/carshop-mobile.gif') no-repeat center center/cover;
-    background-size: auto 100%;
-    width: 15rem;
-    height: 20rem;
-    position: relative;
-  }
-  .screen-listool-mobile-separate-sm {
-    background: url('./img/listtool-separate.gif') no-repeat center center/cover;
-    background-size: auto 100%;
-    width: 19.3rem;
-    height: 18.5rem;
-    position: relative;
-  }
-  .screen-listool-mobile-add-sm {
-    background: url('./img/listtool-add.gif') no-repeat center center/cover;
-    background-size: auto 100%;
-    width: 19.5rem;
-    height: 18.5rem;
-    position: relative;
-  }
-  .screen-listool-mobile-custom-sm {
-    background: url('./img/listtool-custom.gif') no-repeat center center/cover;
-    background-size: auto 100%;
-    width: 19.5rem;
-    height: 18.5rem;
-    position: relative;
-  }
   .header-mobile {
     height: 31rem;
   }
@@ -1309,13 +1128,11 @@ img {
     margin-bottom: 0;
     padding-bottom: 0.2rem;
   }
-
   .dropdown a {
     width: 10rem;
     margin-bottom: 0;
     padding-bottom: 0.2rem;
   }
-
   .dropdown .btn {
     display: inline-block;
     background-color: #011627;
@@ -1328,12 +1145,10 @@ img {
     width: 10rem;
     text-align: center;
   }
-
   .dropdown-header {
     font-size: 1.3rem;
     border-bottom: 0.1rem solid white;
   }
-
   .fixed {
     position: fixed;
     right: 0;
@@ -1360,21 +1175,21 @@ img {
   position: fixed;
   top: 4rem;
   right: 3rem;
-  z-index: 1;
+  z-index: 2;
 }
 
 .times-y {
   position: fixed;
   top: 4rem;
   left: 1rem;
-  z-index: 1;
+  z-index: 2;
 }
 
 .times-y-mobile {
   position: fixed;
   top: 4rem;
   right: 1rem;
-  z-index: 1;
+  z-index: 2;
 }
 
 .fa-expand {
@@ -1437,8 +1252,16 @@ img {
   transform: translate(-50%, -50%);
   z-index: 1;
   transition: all 2s ease-in;
-  max-width: 90%;
-  max-height: 90%;
+}
+
+.lightbox .lightbox-img-mobile {
+  position: fixed;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: all 2s ease-in;
+  max-width: 20rem;
 }
 
 .lightbox .lightbox-img-vertical {
@@ -1486,6 +1309,28 @@ img {
   padding: 2rem;
   text-align: center;
   width: 100%;
+}
+
+/**
+Screen Showcase
+*/
+
+.screen-showcase {
+  max-height: 20rem;
+  max-width: 40rem;
+  object-fit: cover;
+  position: relative;
+}
+
+.screen-showcase-mobile {
+  max-height: 30rem;
+  max-width: 20rem;
+  object-fit: cover;
+  position: relative;
+}
+
+.relative {
+  position: relative;
 }
 
 /*
