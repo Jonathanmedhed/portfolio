@@ -1,6 +1,38 @@
 import { Developer, Project, Feature, Technology } from './Objects';
 
 /**
+ * My Portfolio Project Object
+ */
+
+const porfolioTech = new Technology(['React', 'HTML', 'Css'], [], [], ['JavaScript']);
+
+const portfoliofeatMain = new Feature(
+	"Showcase Developer's skills and projects",
+	'myportfolio-main.gif',
+	'myportfolio-main.gif',
+	['List front and back-end technologies', 'List projects and contact info']
+);
+
+const portfoliofeatProject = new Feature(
+	"Showcase Project's specs and features",
+	'myportfolio-project.gif',
+	'myportfolio-project.gif',
+	['List front and back-end technologies and features', 'Links to visit website and view source code']
+);
+
+export const MyPortfolio = new Project(
+	'February 2020',
+	'My Portfolio',
+	'Web developer portfolio',
+	'https://portfolio-jonathanvzla.herokuapp.com/',
+	'https://github.com/Jonathanmedhed/portfolio',
+	'myportfolio-main.gif',
+	'myportfolio-main.gif',
+	porfolioTech,
+	[portfoliofeatMain, portfoliofeatProject]
+);
+
+/**
  * My Online Shop Project Object
  */
 
@@ -20,9 +52,11 @@ const shopfeatOrders = new Feature('Order Management', 'myshop-orders.gif', 'mys
 ]);
 
 export const MyOnlineShop = new Project(
+	'August 2020',
 	'My Online Shop',
 	'Online Shop Creation Website',
 	'https://myonlineshopvzla.herokuapp.com/',
+	'https://github.com/Jonathanmedhed/myonlineshop',
 	'myshop-main.gif',
 	'myshop-main.gif',
 	shopTech,
@@ -49,9 +83,11 @@ const easyfeatFav = new Feature('Order Management', 'easy-fav.gif', 'easy-fav.gi
 ]);
 
 export const EasyPeasy = new Project(
+	'December 2019',
 	'EasyPeasy',
 	'Ordering WebApp',
 	'https://easy-peasy-v2.herokuapp.com',
+	'https://github.com/Jonathanmedhed/easy-peasy-v2',
 	'easy-main.gif',
 	'easy-main.gif',
 	easyTech,
@@ -148,5 +184,9 @@ export const DevObj = new Developer(
 	'Bsc Computer Science',
 	'Full Stack Developer(Entry Level)',
 	devTech,
-	[EasyPeasy, MyOnlineShop]
+	[MyOnlineShop, MyPortfolio, EasyPeasy],
+	'+584126289924',
+	'jonathanmedhed@gmail.com',
+	'https://www.linkedin.com/in/jonathanmedhed/',
+	'https://github.com/Jonathanmedhed'
 );

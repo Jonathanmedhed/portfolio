@@ -22,6 +22,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.10",
     "nodemon": "^2.0.2",
+    "react": "^16.13.1",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-tooltip": "^4.2.8",
     "react-transition-group": "^4.3.0",
     "request": "^2.88.0"
   }

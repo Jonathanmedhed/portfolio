@@ -1,38 +1,91 @@
 import React, { useEffect, useState, Fragment, createRef } from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import Lightbox from './Lighbox';
-import { DevObj } from '../resources/Data';
+import Totem from './_Totem';
 
-function Project({ match }) {
+function Project({ setCurrentProject, currentProject, inceptionLevel, setInceptionLevel, goDeeper }) {
+	// Project to show
 	const [project, setProject] = useState(null);
+	// To show features
 	const [channel, setChannel] = useState(null);
+	// To open img in lightbox
 	const [openImg, setOpenImg] = useState(false);
+	// To set img to be show in lightbox
 	const [img, setImg] = useState(null);
 
+	// Change background picture and dimension(Desktop)
+	const [background, setBackground] = useState(
+		inceptionLevel === 0
+			? 'header-project-0'
+			: inceptionLevel === 1
+			? 'header-project-1'
+			: inceptionLevel === 2
+			? 'header-project-2'
+			: inceptionLevel === 3
+			? 'header-project-3'
+			: 'header-project'
+	);
+	// Change background picture and dimension mobile stype img(Desktop)
+	const [backgroundMobile, setBackgroundMobile] = useState(
+		inceptionLevel === 0
+			? 'header-mobile-0'
+			: inceptionLevel === 1
+			? 'header-mobile-1'
+			: inceptionLevel === 2
+			? 'header-mobile-2'
+			: inceptionLevel === 3
+			? 'header-mobile-3'
+			: 'header-mobile'
+	);
+
+	// Change background picture and dimension(Mobile)
+	const [backgroundSm, setBackgroundSm] = useState(
+		inceptionLevel === 0
+			? 'header-project-sm-0'
+			: inceptionLevel === 1
+			? 'header-project-sm-1'
+			: inceptionLevel === 2
+			? 'header-project-sm-2'
+			: inceptionLevel === 3
+			? 'header-project-sm-3'
+			: 'header-project-sm'
+	);
+
+	// Change background picture and dimension mobile stype img(Mobile)
+	const [backgroundMobileSm, setBackgroundMobileSm] = useState(
+		inceptionLevel === 0
+			? 'header-project-sm-mobile-0'
+			: inceptionLevel === 1
+			? 'header-project-sm-mobile-1'
+			: inceptionLevel === 2
+			? 'header-project-sm-mobile-2'
+			: inceptionLevel === 3
+			? 'header-project-sm-mobile-3'
+			: 'header-project-sm-mobile'
+	);
+
+	// References to go to the showcase screen or to the bottom
 	let screenRef = createRef();
 	let contactRef = createRef();
 
+	// Set project and go back to top
 	useEffect(() => {
 		const setData = async () => {
-			if (match.params.name && !channel) {
-				DevObj.projects.forEach((project) => {
-					if (project.name === match.params.name) {
-						setProject(project);
-						window.scrollTo(0, screenRef.current.offsetTop);
-					}
-				});
+			if (!channel) {
+				setProject(currentProject);
+				window.scrollTo(0, screenRef.current.offsetTop);
 			}
 		};
 		setData();
 	}, []);
 
+	// Change feature channel
 	const changeChannel = async (choice) => {
 		window.scrollTo(0, screenRef.current.offsetTop);
 		setChannel(choice);
-		console.log(`Channel = ${choice}`);
 	};
 
+	// Open img in lightbox
 	const openLightBox = async (name) => {
 		setImg(name);
 		setOpenImg(!openImg);
@@ -40,22 +93,33 @@ function Project({ match }) {
 
 	return (
 		<div>
+			{/** Lightbox */}
 			{openImg && <Lightbox name={img} toggle={setOpenImg} show={openImg} />}
-			<Navbar type={'project'} setProject={setProject} setChannel={setChannel} contactRef={contactRef} />
+			<Navbar
+				type={'project'}
+				setProject={setProject}
+				setCurrentProject={setCurrentProject}
+				setChannel={setChannel}
+				contactRef={contactRef}
+				setInceptionLevel={setInceptionLevel}
+			/>
 			<div ref={screenRef}>
 				{project && (
 					<Fragment>
+						{/** Jumbo 'screen' for mobile */}
 						<div className="show-sm">
 							<section
+								// Change dimentions if mobile style img
 								className={`${
 									project.mainImg.includes('mobile') || (channel && channel.includes('mobile'))
-										? 'header-project-sm-mobile'
-										: 'header-project-sm'
+										? backgroundMobileSm
+										: backgroundSm
 								}`}
 							>
 								<div className="dark-overlay-project">
 									<div className="header-project-inner">
 										<h1 className="lead">{project.name}</h1>
+										{/** Show channel or main img */}
 										<div className={`${channel ? channel : project.mainImgMobile}`}>
 											<div className="relative">
 												<img
@@ -66,6 +130,7 @@ function Project({ match }) {
 													}`}
 													src={require(`../img/${channel ? channel : project.mainImg}`)}
 												></img>
+												{/** Expand img button */}
 												<div className="expand">
 													<i
 														onClick={() =>
@@ -80,18 +145,21 @@ function Project({ match }) {
 								</div>
 							</section>
 						</div>
+						{/** Jumbo 'screen' for desktop */}
 						<div className="hide-sm">
 							<section
+								// Change dimentions if mobile style img
 								className={`${
 									project.mainImg.includes('mobile') || (channel && channel.includes('mobile'))
-										? 'header-mobile'
-										: 'header-project'
+										? backgroundMobile
+										: background
 								}`}
 							>
 								<div className="dark-overlay-project">
 									<div className="header-project-inner">
 										<h1 className="lead">{project.name}</h1>
 										<div className="relative">
+											{/** Show channel or main img */}
 											<img
 												className={`${
 													channel && channel.includes('mobile')
@@ -100,6 +168,7 @@ function Project({ match }) {
 												}`}
 												src={require(`../img/${channel ? channel : project.mainImg}`)}
 											></img>
+											{/** Expand img button */}
 											<div className="expand">
 												<i
 													onClick={() =>
@@ -116,6 +185,7 @@ function Project({ match }) {
 					</Fragment>
 				)}
 			</div>
+			{/** Project features */}
 			<section className="container">
 				<h1 className="py-1 bg-primary">Features</h1>
 				<div className="cards bg-silver">
@@ -157,6 +227,7 @@ function Project({ match }) {
 					)}
 				</div>
 			</section>
+			{/** Project Specs */}
 			<section className="container bg-silver">
 				<h1 className="py-1 bg-primary">Specs</h1>
 				<div className={project === 'list-tool' ? 'cards two-items' : 'cards'}>
@@ -172,6 +243,7 @@ function Project({ match }) {
 						<div className="card-body">
 							{project && (
 								<Fragment>
+									{/** Front end tech or N/A */}
 									<ul className="card-list-small">
 										{project.technologies.frontend.length === 0 ? (
 											<li>N/A</li>
@@ -179,6 +251,7 @@ function Project({ match }) {
 											project.technologies.frontend.map((tech) => (
 												<li>
 													<i
+														// Show corresponding icon for technology
 														className={`fab fa-${
 															(tech === 'React' && 'react') ||
 															(tech === 'HTML' && 'html5') ||
@@ -208,6 +281,7 @@ function Project({ match }) {
 							<div className="card-body">
 								{project && (
 									<Fragment>
+										{/** Back end tech or N/A */}
 										<ul className="card-list-small">
 											{project.technologies.backend.length === 0 ? (
 												<li>N/A</li>
@@ -215,6 +289,7 @@ function Project({ match }) {
 												project.technologies.backend.map((tech) => (
 													<li>
 														<i
+															// Show corresponding icon for technology
 															className={`fab fa-${
 																(tech === 'Node.js' && 'node-js') ||
 																(tech === 'Django' && 'redhat')
@@ -242,7 +317,7 @@ function Project({ match }) {
 						<div className="card-body">
 							{project && (
 								<Fragment>
-									{' '}
+									{/** Database tech or N/A */}
 									<ul className="card-list-small">
 										{project.technologies.databases.length === 0 ? (
 											<li>N/A</li>
@@ -250,6 +325,7 @@ function Project({ match }) {
 											project.technologies.databases.map((tech) => (
 												<li>
 													<i
+														// Show corresponding icon for technology
 														className={`fas fa-${
 															(tech === 'MongoDB' && 'leaf') ||
 															(tech === 'PostgreSQL' && 'republican') ||
@@ -278,6 +354,7 @@ function Project({ match }) {
 						<div className="card-body">
 							{project && (
 								<Fragment>
+									{/** Language or N/A */}
 									<ul className="card-list-small">
 										{project.technologies.languages.length === 0 ? (
 											<li>N/A</li>
@@ -285,6 +362,7 @@ function Project({ match }) {
 											project.technologies.languages.map((tech) => (
 												<li>
 													<i
+														// Show corresponding icon for technology
 														className={`fab fa-${
 															(tech === 'JavaScript' && 'js') ||
 															(tech === 'Java' && 'java') ||
@@ -303,15 +381,46 @@ function Project({ match }) {
 					</div>
 				</div>
 			</section>
+			{/** Links to open website or see code */}
 			<section className="container">
-				<h1 className="py-1 bg-primary">Link</h1>
+				<h1 className="py-1 bg-primary">Links</h1>
 				{project && (
 					<div className="link">
-						Visit: <a href={project.link}>here</a>
+						<div>
+							{project.name === 'My Portfolio' ? (
+								<div className="meme-container">
+									Visit: <a onClick={() => goDeeper()}>here</a>
+									<img
+										src={
+											inceptionLevel === 0
+												? require(`../img/meme.png`)
+												: inceptionLevel === 1
+												? require(`../img/meme2.gif`)
+												: inceptionLevel === 2
+												? require(`../img/meme3.gif`)
+												: inceptionLevel === 3 && require(`../img/meme4.gif`)
+										}
+									></img>
+								</div>
+							) : (
+								<div>
+									Visit: <a href={project.link}>here</a>
+								</div>
+							)}
+						</div>
+						<div>
+							Code: <a href={project.github}>here</a>
+						</div>
 					</div>
 				)}
 			</section>
+			{/** Totem component (Only for My portfolio project) */}
 			<div ref={contactRef}></div>
+			{project && project.name === 'My Portfolio' && (
+				<div className="spinner-container">
+					<Totem inceptionLevel={inceptionLevel} />
+				</div>
+			)}
 		</div>
 	);
 }
