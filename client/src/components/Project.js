@@ -2,6 +2,7 @@ import React, { useEffect, useState, Fragment, createRef } from 'react';
 import Navbar from './Navbar';
 import Lightbox from './Lighbox';
 import Totem from './_Totem';
+import Loading from './_Loading';
 
 function Project({ setCurrentProject, currentProject, inceptionLevel, setInceptionLevel, goDeeper }) {
 	// Project to show
@@ -12,6 +13,8 @@ function Project({ setCurrentProject, currentProject, inceptionLevel, setIncepti
 	const [openImg, setOpenImg] = useState(false);
 	// To set img to be show in lightbox
 	const [img, setImg] = useState(null);
+	// To show loading
+	const [loading, setLoading] = useState(false);
 
 	// Change background picture and dimension(Desktop)
 	const [background, setBackground] = useState(
@@ -104,7 +107,9 @@ function Project({ setCurrentProject, currentProject, inceptionLevel, setIncepti
 				setInceptionLevel={setInceptionLevel}
 			/>
 			<div ref={screenRef}>
-				{project && (
+				{!project || loading ? (
+					<Loading />
+				) : (
 					<Fragment>
 						{/** Jumbo 'screen' for mobile */}
 						<div className="show-sm">
@@ -404,7 +409,10 @@ function Project({ setCurrentProject, currentProject, inceptionLevel, setIncepti
 								</div>
 							) : (
 								<div>
-									Visit: <a href={project.link}>here</a>
+									Visit:{' '}
+									<a onClick={() => setLoading(true)} href={project.link}>
+										here
+									</a>
 								</div>
 							)}
 						</div>

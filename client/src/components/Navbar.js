@@ -165,7 +165,7 @@ function Navbar({
 									{type === 'project' && (
 										<li>
 											<button onClick={() => toHome()} className="btn btn-primary">
-												<Link to={`/`}>Home</Link>
+												Home
 											</button>
 										</li>
 									)}
@@ -247,8 +247,8 @@ function Navbar({
 					{type === 'project' && (
 						<Fragment>
 							<li>
-								<button className="btn btn-primary">
-									<Link to="/">Home</Link>
+								<button onClick={() => toHome()} className="btn btn-primary">
+									Home
 								</button>
 							</li>
 							{!showMenu ? (
