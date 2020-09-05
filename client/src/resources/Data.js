@@ -1,6 +1,29 @@
 import { Developer, Project, Feature, Technology } from './Objects';
 
 /**
+ * My Components Project Object
+ */
+
+const componentsTech = new Technology(['React', 'HTML', 'Css'], [], [], ['JavaScript']);
+
+const componentsfeatMain = new Feature('Showcase react components', 'Components-feat.gif', 'Components-feat.gif', [
+	'List of buttons, inputs, forms, etc...',
+]);
+
+export const MyComponents = new Project(
+	'April 2020',
+	'My Components',
+	'React Components Showcase',
+	'https://react-components-vzla.herokuapp.com/',
+	'https://github.com/Jonathanmedhed/ReactComponents',
+	'Components-main.gif',
+	'Components-main.gif',
+	componentsTech,
+	[componentsfeatMain],
+	'Webapp to showcase react components i have used in the past and for future use'
+);
+
+/**
  * My Portfolio Project Object
  */
 
@@ -187,7 +210,7 @@ export const DevObj = new Developer(
 	'Bsc Computer Science',
 	'Full Stack Developer(Entry Level)',
 	devTech,
-	[MyOnlineShop, MyPortfolio, EasyPeasy],
+	[MyOnlineShop, MyComponents, MyPortfolio, EasyPeasy],
 	'+584126289924',
 	'jonathanmedhed@gmail.com',
 	'https://www.linkedin.com/in/jonathanmedhed/',
