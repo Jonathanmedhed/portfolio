@@ -190,6 +190,13 @@ function Project({ setCurrentProject, currentProject, inceptionLevel, setIncepti
 					</Fragment>
 				)}
 			</div>
+			{/** Project description */}
+			<section className="container">
+				<h1 className="py-1 bg-primary">Description</h1>
+				<div className="cards bg-silver">
+					{project && <h2 className="description">{project.descriptionExt}</h2>}
+				</div>
+			</section>
 			{/** Project features */}
 			<section className="container">
 				<h1 className="py-1 bg-primary">Features</h1>

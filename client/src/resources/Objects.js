@@ -10,7 +10,18 @@ export function Developer(name, degree, occupation, technologies, projects, phon
 	this.github = github;
 }
 
-export function Project(date, name, description, link, github, mainImg, mainImgMobile, technologies, features) {
+export function Project(
+	date,
+	name,
+	description,
+	link,
+	github,
+	mainImg,
+	mainImgMobile,
+	technologies,
+	features,
+	descriptionExt
+) {
 	this.date = date;
 	this.name = name;
 	this.description = description;
@@ -20,6 +31,7 @@ export function Project(date, name, description, link, github, mainImg, mainImgM
 	this.mainImgMobile = mainImgMobile;
 	this.technologies = technologies;
 	this.features = features;
+	this.descriptionExt = descriptionExt;
 }
 
 export function Technology(frontend, backend, databases, languages) {

@@ -29,7 +29,8 @@ export const MyPortfolio = new Project(
 	'myportfolio-main.gif',
 	'myportfolio-main.gif',
 	porfolioTech,
-	[portfoliofeatMain, portfoliofeatProject]
+	[portfoliofeatMain, portfoliofeatProject],
+	'Webapp to showcase my development projects'
 );
 
 /**
@@ -60,7 +61,8 @@ export const MyOnlineShop = new Project(
 	'myshop-main.gif',
 	'myshop-main.gif',
 	shopTech,
-	[shopfeatStatistics, shopfeatOrders, shopfeatCreate]
+	[shopfeatStatistics, shopfeatOrders, shopfeatCreate],
+	'Webapp that allows users to create an online shop with only a few clicks'
 );
 
 /**
@@ -91,7 +93,8 @@ export const EasyPeasy = new Project(
 	'easy-main.gif',
 	'easy-main.gif',
 	easyTech,
-	[easyfeatFav, easyfeatLayout, easyfeatCreate]
+	[easyfeatFav, easyfeatLayout, easyfeatCreate],
+	'My final project for college, a webapp that allows users to order products from different suppliers at the same time with only a few clicks'
 );
 
 /**
