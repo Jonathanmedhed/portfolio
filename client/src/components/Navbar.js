@@ -46,6 +46,7 @@ function Navbar({
 	const selectProject = (project) => {
 		if (setProject) {
 			setProject(project);
+			setCurrentProject(project);
 		}
 		setShowMenu(!showMenu);
 		if (setChannel) {
