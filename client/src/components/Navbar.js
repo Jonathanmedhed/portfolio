@@ -213,9 +213,7 @@ function Navbar({
 																onClick={() => selectProject(project)}
 																className="btn btn-primary"
 															>
-																<Link to={`/projects/${project.name}`}>
-																	{project.name}
-																</Link>
+																{project.name}
 															</button>
 														</li>
 													))}
@@ -271,7 +269,7 @@ function Navbar({
 													onClick={() => selectProject(project)}
 													className="btn btn-primary"
 												>
-													<Link to={`/projects/${project.name}`}>{project.name}</Link>
+													{project.name}
 												</button>
 											</li>
 										))}
